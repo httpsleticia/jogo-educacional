@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura do Gatinho: O Chão é Lava! 🐈‍⬛🌋</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="game-card">
+    <header class="game-header">
+      <span>🐈‍⬛</span> JOGO DO GATINHO: O CHÃO É LAVA! <span>🌋</span>
+    </header>
+
+    <section id="screen-menu" class="screen screen-active">
+      <h1 class="menu-title">Salve o Gatinho! 🐈‍⬛</h1>
+      <p class="menu-subtitle">Complete as letras que faltam para subir a escada!</p>
+
+      <div class="instructions-card">
+        <ul>
+          <li>🔤 <strong>Como jogar:</strong> Olhe a palavra e clique na letra certa para completar.</li>
+          <li>🎯 <strong>Acertos:</strong> O gatinho pula na hora para o degrau de cima!</li>
+          <li>🔥 <strong>Cuidado:</strong> A lava vai subindo! Se errar, ela dá um salto para cima!</li>
+        </ul>
+      </div>
+
+      <p style="font-weight: bold; color: #475569; margin-bottom: 12px; font-size: 1.1rem;">Escolha o nível para
+        começar:</p>
+
+      <div style="display: flex; gap: 20px;">
+        <button class="btn" id="btn-easy"
+          style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);">Modo
+          Fácil 🌱</button>
+        <button class="btn" id="btn-hard"
+          style="background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); box-shadow: 0 6px 12px rgba(239, 68, 68, 0.3);">Modo
+          Difícil 🔥</button>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="game-play-area">
+
+        <div class="ladder-column">
+          <div class="ladder-track" id="ladder-track">
+            <div class="steps-container" id="steps-container"></div>
+          </div>
+
+          <div class="cat-container" id="cat-container">
+            <div class="cat-art" id="cat-art">
+              <div class="cat-ear-l"></div>
+              <div class="cat-ear-r"></div>
+              <div class="cat-head">
+                <div class="cat-eyes">
+                  <div class="cat-eye"></div>
+                  <div class="cat-eye"></div>
+                </div>
+              </div>
+              <div class="cat-body"></div>
+              <div class="cat-tail"></div>
+            </div>
+          </div>
+
+          <div class="lava-liquid" id="lava-liquid">
+            <div class="lava-wave">🔥🌋🔥🌋🔥</div>
+          </div>
+        </div>
+
+        <div class="question-column">
+          <div>
+            <div class="game-status">
+              <div class="status-badge" id="lbl-score">Pontos: 0</div>
+              <div class="danger-badge" id="lbl-highscore">Recorde: 0</div>
+            </div>
+
+            <div class="question-box">
+              <p style="color: #64748b; font-weight: 600; margin-bottom: 10px;">Complete a palavra abaixo:</p>
+              <h2 class="question-text" id="lbl-word">G_TO</h2>
+              <div class="options-grid" id="box-options"></div>
+            </div>
+          </div>
+
+          <div>
+            <button class="btn-quit" id="btn-quit">Sair 🏃‍♂️</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="screen-lose" class="screen">
+      <div class="result-emoji">😿🔥</div>
+      <h1 class="result-title">A lava alcançou o gatinho!</h1>
+      <p id="lbl-final-score" style="font-size: 1.2rem; color: #4b5563; margin-bottom: 25px;">Você fez 0 pontos.</p>
+
+      <div style="display: flex; gap: 15px;">
+        <button class="btn" id="btn-restart"
+          style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); box-shadow: 0 6px 12px rgba(245, 158, 11, 0.3);">Tentar
+          de Novo 🔄</button>
+        <button class="btn" id="btn-go-menu"
+          style="background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%); box-shadow: 0 6px 12px rgba(100, 116, 139, 0.3);">Menu
+          Inicial 🏠</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="game.js"></script>
+</body>
+
+</html>

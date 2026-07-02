@@ -1,0 +1,82 @@
+const wordBankRaw = {
+    4: [
+        "gato", "pato", "rato", "bolo", "lobo", "fogo", "jogo", "sapo", "vaca", "faca",
+        "mato", "luta", "lixo", "nave", "copo", "cabo", "rua", "mula", "sala", "gema",
+        "mesa", "pera", "dedo", "pico", "fita", "rede", "sino", "suco", "bico", "lama",
+        "pino", "cano", "dica", "bola", "casa", "boca", "dado", "fada", "gelo", "bife",
+        "muda", "pote", "selo", "toca", "vaga", "zero", "pneu", "atum", "bode", "bota",
+        "capa", "caro", "ceia", "cena", "data", "deus", "dia", "doce", "dona", "duuro",
+        "eixo", "feio", "figo", "fila", "fino", "fixo", "flor", "foca", "fome", "gala",
+        "galo", "gira", "gola", "grau", "guia", "hino", "hoje", "isca", "item", "jato",
+        "joia", "juiz", "juri", "lado", "lago", "leao", "leia", "leite", "leme", "luto",
+        "luva", "maca", "maio", "mala", "mano", "mapa", "mar", "meio", "meta", "mico",
+        "mina", "mira", "moda", "mola", "moto", "muro", "nada", "neta", "neto", "ninho",
+        "noite", "nome", "nova", "novo", "obra", "oleo", "olho", "onca", "onda", "ouro",
+        "paca", "pago", "pais", "paje", "pala", "papa", "para", "pata", "peao", "peca",
+        "pele", "pelo", "pena", "peso", "pior", "piso"
+    ],
+    5: [
+        "chave", "folha", "navio", "zebra", "carro", "prato", "peixe", "melao", "limao", "tigre",
+        "livro", "pomba", "manga", "fruta", "pedra", "areia", "palha", "nariz", "sorte", "tenda",
+        "barco", "ponte", "lapis", "tinta", "vela", "festa", "abano", "aluno", "amigo", "aroma",
+        "bacia", "balao", "banco", "barba", "beijo", "bloco", "bolsa", "botao", "briga", "bruxa",
+        "cabra", "calca", "caldo", "campo", "canal", "canto", "capim", "carta", "casca", "cauda",
+        "cerca", "cesta", "chuva", "ciume", "clube", "cobra", "cofre", "colar", "comer", "corpo",
+        "cravo", "creme", "cuco", "culto", "curva", "dardo", "dente", "disco", "drama", "duque",
+        "exame", "fauna", "favor", "febre", "feixe", "ferro", "fibra", "filme", "firme", "fundo",
+        "gaita", "ganso", "garfo", "garra", "gesso", "globo", "goma", "gosto", "grade", "grama",
+        "grilo", "gripe", "grito", "grupo", "guizo", "harpa", "horta", "hotel", "humor", "idade",
+        "idolo", "igual", "indio", "irmao", "jarda", "jeito", "jovem", "junto", "justo", "lagoa",
+        "lanca", "largo", "laser", "lazer", "leigo", "leito", "lente", "leque", "leste", "letra",
+        "linda", "lindo", "linha", "lista", "litro", "local", "lugar", "macro", "maior", "manto",
+        "marca", "marco", "massa", "menos", "mente", "mesmo", "metro", "miolo", "misto", "moeda",
+        "moita", "molar", "molho", "monge", "monte", "morte", "mosca", "mural", "museu", "nacao",
+        "natal", "nevoa", "ninho", "nobre", "noite", "norte", "nuvem"
+    ],
+    6: [
+        "cavalo", "janela", "panela", "macaco", "ovelha", "tijolo", "sapato", "coruja", "boneca", "boneco",
+        "espada", "pipoca", "tapete", "tomate", "queijo", "camisa", "calcao", "flores", "jardim", "escola",
+        "abelha", "abajur", "abraco", "adega", "agenda", "agente", "agulha", "alface", "almoco", "altar",
+        "altura", "ameixa", "amparo", "ancora", "animal", "antena", "antigo", "aperto", "aranha", "arvore",
+        "asfalto", "atleta", "atraso", "avesso", "azeite", "bairro", "banana", "barata", "barril", "bastao",
+        "batata", "batida", "batom", "bexiga", "bilhete", "bonito", "bosque", "botica", "botina", "branco",
+        "brasa", "brilho", "brinco", "bronze", "bufalo", "buraco", "buzina", "cabeca", "cabelo", "cabide",
+        "cacau", "cacete", "caipira", "caixote", "calado", "calcada", "calhau", "camara", "camelo", "caneca",
+        "canela", "caneta", "canhao", "canudo", "capote", "carona", "cartaz", "casaco", "castelo", "cebola",
+        "cedula", "cereja", "chacara", "chapeu", "cheiro", "chifre", "chinelo", "choque", "chorao", "chumbo",
+        "chupeta", "cidade", "gatinho", "cigano", "cinema", "cinto", "cinza", "ciumes", "cliente", "clima",
+        "coelho", "coluna", "cometa", "comida", "comigo", "compra", "coqueiro", "coracao", "corda", "coroa",
+        "corrida", "cortina", "cosmos", "costa", "costela", "cozinha", "cracha", "craneo"
+    ],
+    7: [
+        "escolar", "caderno", "cenoura", "foguete", "martelo", "fazenda", "perfume", "toalha", "tesoura", "cozinha",
+        "padeiro", "madeira", "bandeira", "tesouro", "caminho", "relogio", "abacate", "abobora", "acougue", "alecrim",
+        "alfinete", "algodao", "alicate", "almofada", "amendoim", "amizade", "amostra", "animais", "anuncio", "aquario",
+        "armario", "arquivo", "arvores", "assento", "aventura", "avental", "azeitona", "bagagem", "baleia", "balanco",
+        "banquete", "barraca", "barreira", "barulho", "batalha", "beliche", "besouro", "bexigas", "bezerro",
+        "biombo", "biscoito", "bisturi", "bochecha", "boicote", "bolacha", "bolinho", "bonecas", "bonitos", "bordado",
+        "borracha", "bosques", "botinas", "botoes", "brancos", "brilhante", "brincos", "broches", "bufalos", "buracos",
+        "buzinas", "cabecas", "cabelos", "cabides", "cabrita", "cachorro", "cacimba", "cadeira", "cadernos", "caixotes",
+        "camadas", "camarao", "camelos", "camisas", "camomila", "campina", "campos", "canecas", "canelas", "canetas"
+    ],
+    8: [
+        "biscoito", "mochila", "telefone", "elefante", "pessego", "melancia", "cavaleiro", "presente", "abacates", "aboboras",
+        "acougues", "alecrins", "alfinetes", "algodoes", "alicates", "almofadas", "amendoins", "amizades", "amostras", "anuncios",
+        "aquarios", "armarios", "arquivos", "asfaltos", "assentos", "aventuras", "aventais", "azeitonas", "bagagens", "baleias",
+        "balancos", "banquetes", "barracas", "barreiras", "barulhos", "batalhas", "beliches", "besouros", "biombos",
+        "bisturis", "bochechas", "bolinhos", "bordados", "borrachas", "broches", "cabritas", "cachorros", "cadeiras", "calorias",
+        "camaroes", "camomilas", "campinas", "canetas", "cangurus", "canivetes", "cantores", "capacetes", "capivaras", "caprichos",
+        "carimbos", "carneiros", "caronas", "carteiras", "carteiros", "cartuchos", "casacos", "cascatas", "castelos", "cautelas",
+        "cavaleiros", "cebolas", "cegonhas", "cenouras", "cerejas", "cervejas", "chaleiras", "chamines", "charretes", "chupetas",
+        "dinheiro", "diamante", "diploma", "diretoria", "esfregao", "esmeralda", "espinhas", "estacoes", "estatua"
+    ],
+    9: [
+        "chocolate", "borboleta", "geladeira", "bicicleta", "tartaruga", "alfabeto", "brinquedo", "dinossauro", "abacateiro", "abafador",
+        "aberturas", "aderecos", "adicionais", "adivinhas", "adjetivos", "advogados", "afastados", "afetuosos", "agasalhos", "agilidade",
+        "alavancas", "albergues", "alcaparras", "alquimista", "amanhecer", "amarelado", "amarguras", "ambientes", "ambiciosos", "ambulancia",
+        "amendoeira", "americanas", "americanos", "analistas", "analfabeto", "ancestrais", "andamentos", "andorinhas", "anestesia",
+        "aniversario", "almanaque", "astronauta", "atividades", "atletismo", "atracando", "audiencia", "autonomia", "autoridade", "auxiliares",
+        "avalanches", "aventuras", "bancarios", "banqueiros", "barqueiro", "barreiras", "batedeira", "bochechas", "brilhantes", "cabeceira",
+        "cachoeira", "caminhada", "caminhoes", "campeonato", "canalizador", "canguru", "caranguejo", "carpinteiro", "carreiras", "carroceiro"
+    ]
+};
