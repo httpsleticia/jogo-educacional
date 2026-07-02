@@ -11,7 +11,7 @@ let audioCtx = null;
 
 let currentDifficulty = "easy";
 let filteredWords = [];
-let lavaSpeedMultiplier = 0.52; // Velocidade do Modo Fácil ajustada conforme você pediu
+let lavaSpeedMultiplier = 0.52; // Velocidade do Modo Fácil ajustada
 let mistakePunishment = 45;
 
 function initAudio() {
@@ -217,7 +217,7 @@ function startGame(difficulty) {
         // Junta listas de 4, 5 e 6 letras
         selectedWordsList = [...wordBankRaw[4], ...wordBankRaw[5], ...wordBankRaw[6]];
     } else {
-        lavaSpeedMultiplier = 1.1;  // Mantido original para o Difícil
+        lavaSpeedMultiplier = 0.95;  // Mantido original para o Difícil
         mistakePunishment = 65;
         // Junta listas de 6, 7, 8 e 9 letras
         selectedWordsList = [...wordBankRaw[6], ...wordBankRaw[7], ...wordBankRaw[8], ...wordBankRaw[9]];
